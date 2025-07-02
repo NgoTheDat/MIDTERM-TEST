@@ -295,34 +295,17 @@ def dfs(maze, start, goal, cell_size):
 
 # ====== CHẠY TEST ======
 if __name__ == "__main__": 
-    # # TH1: Nếu tự tạo maze thì dùng hàm draw_static_maze(screen, maze, cell_size) và chạy thuật toán
-    # maze = [
-    #     ['S', 9,   True, 1,  1 ],
-    #     [1,   1,   True, 9,  True],
-    #     [True, 1,  1,    1,  1 ],
-    #     [9,   True, True, 1, True],
-    #     [1,   1,   1,   1,  'G']
-    # ]
-    # # Phải thay đổi start và goal phù hợp với maze đã tạo không thì sẽ lỗi thuật toán search
-    # start, goal  = (0, 0), (4, 4)
-    # draw_static_maze(screen, maze, cell_size)
-    
-    # bfs(maze, start, goal, cell_size)
-    # screen.fill(BLACK)
-    # draw_static_maze(screen, maze, cell_size)
-    
-    # pygame.time.delay(1000)
-    # ucs(maze, start, goal, cell_size)
-    # screen.fill(BLACK)
-    # draw_static_maze(screen, maze, cell_size)
-    
-    # pygame.time.delay(1000)
-    # dfs(maze, start, goal, cell_size)
-    
-    
-    # TH2: Nếu dùng hàm maze_generation thì set start và goal vào vị trí mong muốn
-    start, goal = (0, 0), (9, 9)
-    maze = maze_generation(start,goal,n,m,cell_size)
+    # TH1: Nếu tự tạo maze thì dùng hàm draw_static_maze(screen, maze, cell_size) và chạy thuật toán
+    maze = [
+        ['S', 9,   True, 1,  1 ],
+        [1,   1,   True, 9,  True],
+        [True, 1,  1,    1,  1 ],
+        [9,   True, True, 1, True],
+        [1,   1,   1,   1,  'G']
+    ]
+    # Phải thay đổi start và goal phù hợp với maze đã tạo không thì sẽ lỗi thuật toán search
+    start, goal  = (0, 0), (4, 4)
+    draw_static_maze(screen, maze, cell_size)
     
     bfs(maze, start, goal, cell_size)
     screen.fill(BLACK)
@@ -335,6 +318,23 @@ if __name__ == "__main__":
     
     pygame.time.delay(1000)
     dfs(maze, start, goal, cell_size)
+    
+    
+    # # TH2: Nếu dùng hàm maze_generation thì set start và goal vào vị trí mong muốn
+    # start, goal = (0, 0), (9, 9)
+    # maze = maze_generation(start,goal,n,m,cell_size)
+    
+    # bfs(maze, start, goal, cell_size)
+    # screen.fill(BLACK)
+    # draw_static_maze(screen, maze, cell_size)
+    
+    # pygame.time.delay(1000)
+    # ucs(maze, start, goal, cell_size)
+    # screen.fill(BLACK)
+    # draw_static_maze(screen, maze, cell_size)
+    
+    # pygame.time.delay(1000)
+    # dfs(maze, start, goal, cell_size)
 
     running = True
     while running:
