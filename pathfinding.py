@@ -156,7 +156,7 @@ def bfs(maze, start, goal, cell_size):
                     q.append((nx, ny))
                     if (nx, ny) not in (start, goal):
                         color_cell((nx, ny), frontier_color, cell_size, str(maze[ny][nx]))  # frontier
-        pygame.time.delay(100)  # tốc độ mô phỏng
+        pygame.time.delay(300)  # tốc độ mô phỏng
 
     path_cost = 0
     node = goal
@@ -165,7 +165,7 @@ def bfs(maze, start, goal, cell_size):
             color_cell(node, path_color, cell_size, str(maze[node[1]][node[0]]))
             path_cost += int(maze[node[1]][node[0]])
         node = came_from.get(node)
-        pygame.time.delay(15)
+        pygame.time.delay(300)
         
     end_time = time.time()
     execution_time = end_time - start_time
@@ -219,7 +219,7 @@ def ucs(maze, start, goal, cell_size):
                     heapq.heappush(heap, (new_cost, next_node))
                     if next_node not in (start, goal):
                         color_cell(next_node, frontier_color, cell_size, str(val))
-        pygame.time.delay(50)
+        pygame.time.delay(300)
 
     # ---- tô đường đi ----
     path_cost = 0
@@ -230,7 +230,7 @@ def ucs(maze, start, goal, cell_size):
             path_cost += int(val)             # val chắc chắn là số
             color_cell(node, path_color, cell_size, str(val))
         node = came_from.get(node)
-        pygame.time.delay(15)
+        pygame.time.delay(300)
 
     exec_time = time.time() - start_time
     print("\nUCS Statistics:")
@@ -272,7 +272,7 @@ def dfs(maze, start, goal, cell_size):
                     stack.append(neighbor)
                     if neighbor not in (start, goal):
                         color_cell(neighbor, frontier_color, cell_size, str(maze[ny][nx]))
-        pygame.time.delay(100)
+        pygame.time.delay(300)
 
     path_cost = 0
     node = goal
@@ -281,7 +281,7 @@ def dfs(maze, start, goal, cell_size):
             color_cell(node, path_color, cell_size, str(maze[node[1]][node[0]]))
             path_cost += int(maze[node[1]][node[0]])
         node = came_from.get(node)
-        pygame.time.delay(50)
+        pygame.time.delay(300)
 
     exec_time = time.time() - start_time
     print("\nDFS Statistics:")
